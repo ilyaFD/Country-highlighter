@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Country-highlighter/static/css/main.4db17955.css",
+    "main.js": "/Country-highlighter/static/js/main.99aab01b.js",
+    "index.html": "/Country-highlighter/index.html",
+    "main.4db17955.css.map": "/Country-highlighter/static/css/main.4db17955.css.map",
+    "main.99aab01b.js.map": "/Country-highlighter/static/js/main.99aab01b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4db17955.css",
+    "static/js/main.99aab01b.js"
+  ]
+}
