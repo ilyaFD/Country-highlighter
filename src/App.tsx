@@ -1,15 +1,21 @@
 import React from 'react';
-import './App.css';
 import useFetch from './hooks/useFetch.hook';
-import { ICountry } from "./stores/Store"
+import { ICountry, useStore } from "./stores/Store";
+import Header from "./components/parts/Header";
+import TabList from "./components/parts/TabList"
 
 const App: React.FC = () => {
+  const store = useStore();
 	const [response, isError, isLoading] = useFetch<ICountry>("https://cdn.utopiamusic.com/code-test/frontend/countries.json");
-  console.log(response)
+  React.useEffect(() => {
+    response && store.setCountries(response);
+  }, [response]);
+
   return (
-    <div className="App">
-      <p>test</p>
-    </div>
+    <>
+      <Header/>
+      <TabList/>
+    </>
   );
 }
 

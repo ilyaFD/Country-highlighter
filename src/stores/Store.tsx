@@ -9,14 +9,17 @@ export interface ICountry {
 export interface IStore {
   activeRegion: string;
   countries: ICountry[]; 
-  activeCountries: string[]; 
+  activeCountries: string[];
+  setActiveRegion: (activeRegion: string) => void
+  setCountries: (countries: ICountry[]) => void
+  addActiveCountry: (country: string) => void
+  deleteActiveCountry: (country: string) => void
 }
 
 export class Store implements IStore {
   activeRegion = '';
   countries = [] as ICountry[];
   activeCountries = [] as string[];
-
 
   constructor() {
     makeAutoObservable(this);
