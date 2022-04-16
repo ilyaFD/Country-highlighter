@@ -1,8 +1,9 @@
 import React from 'react';
 import useFetch from './hooks/useFetch.hook';
 import { ICountry, useStore } from "./stores/Store";
-import Header from "./components/parts/Header";
-import TabList from "./components/parts/TabList"
+import Header from "./components/parts/Header/Header";
+import TabList from "./components/parts/TabList";
+import * as SBase from './components/ui/base.styled';
 
 const App: React.FC = () => {
   const store = useStore();
