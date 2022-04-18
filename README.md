@@ -10,11 +10,11 @@
 - - containers/ (to separate logic and display in components)
 
 ## Basic packages
-TypeScript (for basic testing during coding and type documentation)
-Styled Components (for abstraction from unique css class names and for good structure of non-logical components)
-Mobx (for quick and easy state management)
-Axios (for API requests)
-Gh pages (for a simple deployment)
+- TypeScript (for basic testing during coding and type documentation)
+- Styled Components (for abstraction from unique css class names and for good structure of non-logical components)
+- Mobx (for quick and easy state management)
+- Axios (for API requests)
+- Gh pages (for a simple deployment)
 
 ## Available Scripts
 In the project directory, you can run:
