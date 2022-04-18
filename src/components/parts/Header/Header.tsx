@@ -1,5 +1,5 @@
 import React from 'react';
-import * as SBase from '../../ui/base.styled';
+import * as SBase from '../../styles/base.styled';
 import * as SHeader from './Header.styled';
 import logo from '../../../assets/logo.png';
 
@@ -8,8 +8,8 @@ const Header: React.FC = () => {
         <SHeader.Wrap>
             <SBase.Row>
                 <SBase.Col></SBase.Col>
-                <SBase.Col grow={2}>
-                    <SBase.Title>Utopia Country Highlighter</SBase.Title>
+                <SBase.Col grow={2} centerVertical>
+                    <SBase.Title center>Utopia Country Highlighter</SBase.Title>
                 </SBase.Col>
                 <SBase.Col>
                     <SHeader.LogoWrap>

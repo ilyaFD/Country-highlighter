@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrap = styled.div`
     background-color: #222;
     color: white;
-    text-align: center;
     padding: 60px 30px;
 }
 `;

@@ -1,45 +1,53 @@
 import React from "react";
 import { makeAutoObservable } from "mobx";
-
-export interface ICountry {
-  name: string;
-  continent: string;
-}
+import { ICountry } from '../types/types';
 
 export interface IStore {
-  activeRegion: string;
   countries: ICountry[]; 
-  activeCountries: string[];
-  setActiveRegion: (activeRegion: string) => void
+  activeContinent: string;
+  continents: string[];
+  continentCountries: ICountry[];
   setCountries: (countries: ICountry[]) => void
-  addActiveCountry: (country: string) => void
-  deleteActiveCountry: (country: string) => void
+  setActiveContinent: (activeContinent: string) => void
+  toggleCountryActivity: (country: string) => void
 }
 
 export class Store implements IStore {
-  activeRegion = '';
   countries = [] as ICountry[];
-  activeCountries = [] as string[];
+  activeContinent = '';
+  get continents() {
+    let continents: string[] = [];
+    this.countries.forEach((country: ICountry): void => {
+        !continents.includes(country.continent) && continents.push(country.continent)
+    })
+    return continents;
+  };
+  get continentCountries() {
+    return this.countries.filter((country: ICountry): boolean  => {
+      return country.continent === this.activeContinent
+    })
+  }
 
   constructor() {
     makeAutoObservable(this);
-  }
-
-  setActiveRegion(activeRegion: string) {
-    this.activeRegion = activeRegion;
   }
 
   setCountries(countries: ICountry[]) {
     this.countries = countries;
   }
 
-  addActiveCountry(country: string) {
-    // this.activeCountries = [...this.activeCountries, country]
-    this.activeCountries.push(country)
+  setActiveContinent(activeContinent: string) {
+    this.activeContinent = activeContinent;
   }
 
-  deleteActiveCountry(country: string) {
-    this.activeCountries = this.activeCountries.filter((item: string) => item !== country)
+  toggleCountryActivity(activeCountry: string) {
+    this.countries = this.countries.map((country: ICountry): ICountry => {
+      return {
+        name: country.name,
+        continent: country.continent,
+        active: country.name === activeCountry ? !country.active : country.active,
+      }
+    })
   }
 }
 
