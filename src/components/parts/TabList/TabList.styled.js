@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Wrap = styled.div`
     padding: 0 2.5rem;
+    @media (max-width: 768px) {
+        padding: 0;
+    }
 `;
 
 export const Nav = styled.div`
@@ -32,6 +35,9 @@ export const Item = styled.button`
     text-align: left;
     :nth-child(4n) {
         margin-right: 0;
+    }
+    @media (max-width: 768px) {
+        width: calc(50% - 30px);
     }
 `;
 

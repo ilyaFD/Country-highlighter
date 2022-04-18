@@ -9,12 +9,12 @@ const TabListContainer: React.FC = () => {
     const store = useStore();
     const [response, isError, isLoading] = useFetch<ICountry>("https://cdn.utopiamusic.com/code-test/frontend/countries.json");
 
-    React.useEffect(() => {
+    React.useEffect((): void => {
         if (response) {
             store.setCountries(response);
             store.setActiveContinent(response[0].continent);
         }
-    }, [response]);
+    }, [response, store]);
 
     const onClickNav = (continent: string): void => {
         store.setActiveContinent(continent)
