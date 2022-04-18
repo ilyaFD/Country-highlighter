@@ -29,6 +29,7 @@ export const Item = styled.button`
     color: ${props => props.active ? '#e62382' : 'black'};
     transition: 0.2s;
     margin-bottom: 1rem;
+    text-align: left;
     :nth-child(4n) {
         margin-right: 0;
     }
